@@ -1,0 +1,74 @@
+import React from "react";
+
+const projects = [
+  { name: "Power BI", link: "#powerbi", description: "Analyse et visualisation de données avec Power BI." },
+  { name: "Python", link: "#python", description: "Scripts et automatisation de données en Python." },
+  { name: "Machine Learning", link: "#ml", description: "Modélisation et apprentissage automatique." },
+  { name: "Excel", link: "#excel", description: "Tableaux croisés dynamiques et analyses avancées." },
+  { name: "Projets en cours", link: "#projects", description: "Exploration de nouvelles analyses et visualisations." },
+];
+
+const diplomas = [
+  { name: "Google Advanced Data Analytics (En cours)", institution: "Google" },
+  { name: "Master en Finance et Comptabilité", institution: "Université de Dakar" },
+  { name: "Certificat Data Analysis", institution: "Mastercard Force N" },
+  { name: "Google Analytics Certification", institution: "Google" },
+  { name: "Certification en Systèmes Micro-informatiques et Réseaux", institution: "Instituto Europa, Bilbao, Spain" },
+  { name: "Analyste de Systèmes de l'Information", institution: "Instituto SOCRATES, Cadiz, Spain" },
+];
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-[#4E2A1E] text-white p-6">
+      <header className="text-center text-5xl font-bold mb-6 uppercase animate-fade-in">
+        <div className="flex justify-center items-center space-x-4 text-5xl font-bold">
+          <span>Portfolio Data Analysis</span>
+          <span>- Adama Sidy SANE</span>
+        </div>
+      </header>
+      <p className="text-center text-lg mb-8 max-w-2xl mx-auto animate-slide-in">
+        Bienvenue sur mon portfolio ! Découvrez mes projets en Data Analysis, Power BI, Python,
+        Machine Learning et Excel. Chaque section vous mènera vers un projet spécifique sur lequel je travaille.
+      </p>
+      
+      <div className="space-y-12 animate-fade-in">
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-center">Projets</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                className="block bg-[#6A3D2F] p-10 rounded-3xl shadow-lg hover:bg-[#855040] transition duration-300 transform hover:scale-105"
+              >
+                <h2 className="text-2xl font-semibold text-center text-white">{project.name}</h2>
+                <p className="text-center text-lg mt-4 text-gray-200">{project.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-center">Diplômes & Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {diplomas.map((diploma, index) => (
+              <div key={index} className="bg-[#6A3D2F] p-6 rounded-3xl shadow-lg">
+                <h3 className="text-xl font-semibold text-center text-white">{diploma.name}</h3>
+                <p className="text-center text-gray-200">{diploma.institution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-center">Contacts</h2>
+          <div className="bg-[#6A3D2F] p-6 rounded-3xl shadow-lg text-center">
+            <p>Email: adama.sidy.sane@example.com</p>
+            <p>Téléphone: +33 6 12 34 56 78</p>
+            <p>Adresse: Paris, France</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
